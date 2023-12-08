@@ -1,4 +1,40 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: blue;
+  font-family: "Poppins", sans-serif;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  padding: 0;
+  margin: 0;
+}
+body .container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: linear-gradient(135deg, #153677, #4e085f);
+}
+body .container .ToDoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 540px;
+  background-color: #fff;
+  padding: 30px 20px 20px 30px;
+  border-radius: 10px;
+}
+body .container .ToDoContainer h2 {
+  display: inline-block;
 }/*# sourceMappingURL=style.css.map */
