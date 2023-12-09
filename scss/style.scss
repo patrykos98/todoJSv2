@@ -12,6 +12,7 @@ body{
         background: linear-gradient(135deg,#153677,#4e085f);
         .ToDoContainer{
             display:flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width:100%;
@@ -22,11 +23,112 @@ body{
             h2{
                 display:inline-block;
             }
-            
+            .inputs{
+                background-color: #edeef0;
+                margin-top:40px;
+                margin-bottom:20px;
+                height:40px;
+                width:500px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                input{
+                    background-color: transparent;
+                    flex:1;
+                    border:none;
+                    outline:none;
+                    padding-left:10px;
+                }
+                .btn{
+                    border:none;
+                    overflow: hidden;
+                    height:80%;
+                    margin-right:10px;
+                    padding:10px 30px;
+                    border-radius: 30px;
+                    background-color: #ff5945;
+                    color:#fff;
+                    cursor:pointer;
+                    text-align: center;
+                    position:relative;
+                    transition:.5s;
+                    &:after{
+                        background: rgba(255,255,255,0.4);
+                        width:50px;
+                        height:150px;
+                        position:absolute;
+                        left:-35%;
+                        top:-250%;
+                        content:"";
+                        transform:rotate(20deg);
+                        transition:width 0.3s;
+                    }
+                    &:hover:after{
+                        width:200%;
+                    }
+                }
+                .btn--clear{
+                    background-color: black;
+                    &:after{
+                        background: rgba(255,255,255,0.4);
+                        width:50px;
+                        height:150px;
+                        position:absolute;
+                        left:-35%;
+                        top:-250%;
+                        content:"";
+                        transform:rotate(20deg);
+                        transition:width 0.3s;
+                    }
+                    &:hover:after{
+                        width:200%;
+                    }
+                }
+            }
+            .ulList{
+                width:100%;
+                    li{
+                        list-style: none;
+                        padding:10px 8px 8px 30px;
+                        position:relative;
+                        font-size: 18px;
+                        &:before{
+                           content:"";
+                           cursor:pointer;
+                           position:absolute;
+                           top:6px;
+                           left:-4px;
+                           background-size: 28px;
+                           background-image:url('../img/unchecked.png');
+                           height:28px;
+                           width:28px;
+                           background-position: center;
+                           border-radius: 50%;
+                           transition:.4s;
+                        }
+                        &:hover{
+                            cursor:pointer;
+                        }
+                    }
+                    li.checked{
+                        text-decoration: line-through;
+                        color:gray;
+                        &:before{
+                            background-size: 28px;
+                            background-image:url('../img/checked.png');
+                        }
+                        &:hover{
+                            cursor:pointer;
+                        }
+                    }
+                
+                }
+            }
 
 
 
 
 }
 }
-}
+

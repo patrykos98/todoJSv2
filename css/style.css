@@ -23,6 +23,8 @@ body .container .ToDoContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -37,4 +39,118 @@ body .container .ToDoContainer {
 }
 body .container .ToDoContainer h2 {
   display: inline-block;
+}
+body .container .ToDoContainer .inputs {
+  background-color: #edeef0;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  height: 40px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+}
+body .container .ToDoContainer .inputs input {
+  background-color: transparent;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+body .container .ToDoContainer .inputs .btn {
+  border: none;
+  overflow: hidden;
+  height: 80%;
+  margin-right: 10px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: #ff5945;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+body .container .ToDoContainer .inputs .btn:after {
+  background: rgba(255, 255, 255, 0.4);
+  width: 50px;
+  height: 150px;
+  position: absolute;
+  left: -35%;
+  top: -250%;
+  content: "";
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+body .container .ToDoContainer .inputs .btn:hover:after {
+  width: 200%;
+}
+body .container .ToDoContainer .inputs .btn--clear {
+  background-color: black;
+}
+body .container .ToDoContainer .inputs .btn--clear:after {
+  background: rgba(255, 255, 255, 0.4);
+  width: 50px;
+  height: 150px;
+  position: absolute;
+  left: -35%;
+  top: -250%;
+  content: "";
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
+body .container .ToDoContainer .inputs .btn--clear:hover:after {
+  width: 200%;
+}
+body .container .ToDoContainer .ulList {
+  width: 100%;
+}
+body .container .ToDoContainer .ulList li {
+  list-style: none;
+  padding: 10px 8px 8px 30px;
+  position: relative;
+  font-size: 18px;
+}
+body .container .ToDoContainer .ulList li:before {
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  left: -4px;
+  background-size: 28px;
+  background-image: url("../img/unchecked.png");
+  height: 28px;
+  width: 28px;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+body .container .ToDoContainer .ulList li:hover {
+  cursor: pointer;
+}
+body .container .ToDoContainer .ulList li.checked {
+  text-decoration: line-through;
+  color: gray;
+}
+body .container .ToDoContainer .ulList li.checked:before {
+  background-size: 28px;
+  background-image: url("../img/checked.png");
+}
+body .container .ToDoContainer .ulList li.checked:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
