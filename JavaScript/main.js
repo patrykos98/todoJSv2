@@ -2,7 +2,7 @@ const input=document.getElementById('inputBox');
 const buttonAdd=document.querySelector('.btn');
 const buttonClear=document.querySelector('.btn--clear')
 const list=document.querySelector('.ulList ul');
-
+let liItems=[];
 
 
 buttonAdd.addEventListener('click',function(){
@@ -10,28 +10,34 @@ buttonAdd.addEventListener('click',function(){
     if(value=='') alert('Nic nie napisaleś!')
     else{
     const liItem=document.createElement('li');
-    liItem.innerText=value;
-     
+    liItem.innerText=value; 
     list.appendChild(liItem);
     }
-    let liItems=[...document.querySelectorAll('.ulList ul li')];
     
-    for(i=0;i<liItems.length;i++)
-    {
-        liItems[i].setAttribute('id',i);
-    }
-
-    const liClicked= e => {
-        console.log(e.target.id);
-    }
-
-    for(let li of liItems){
-        li.addEventListener('click',liClicked);
-    }
-
-    
-
+    list.addEventListener('click',function(e){
+        if(e.target.className==='') {e.target.classList.add('checked')}
+        else if(e.target.className==='checked') {e.target.classList.remove('checked')};
+        
     })
+
+    //liItems=document.querySelectorAll('li');
+    
+    // list.forEach((listItem)=>{
+    //     listItem.addEventListener('click',function(){
+    //         console.log(listItem);
+    //         listItem.classList.toggle('checked');
+    //     })
+    // })
+    
+    // list.addEventListener('click',function(e){
+    //     console.log(e.target);
+    //     if(e.target.tagName==="li") e.target.classList.toggle('checked');
+    // })
+    
+}
+)
+
+
 
 buttonClear.addEventListener('click',function(){
     input.value='';
@@ -40,9 +46,3 @@ buttonClear.addEventListener('click',function(){
 })
 
 
-
-// divs.forEach(function(item){
-//     item.addEventListener('click',function(){
-//        item.remove();
-//     })
-// });
