@@ -12,13 +12,18 @@ buttonAdd.addEventListener('click',function(){
     const liItem=document.createElement('li');
     liItem.innerText=value; 
     list.appendChild(liItem);
-    }
-    
+    const divLi=document.createElement('div');
+    liItem.appendChild(divLi);
+    divLi.addEventListener('click',function(e){
+        e.target.parentElement.remove();
+    })
     list.addEventListener('click',function(e){
         if(e.target.className==='') {e.target.classList.add('checked')}
         else if(e.target.className==='checked') {e.target.classList.remove('checked')};
         
     })
+    }
+    
 
     //liItems=document.querySelectorAll('li');
     
