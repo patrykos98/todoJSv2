@@ -6,6 +6,8 @@ let liItems=[];
 
 
 buttonAdd.addEventListener('click',function(){
+    if(confirm("Czy chcesz dodać to zadanie?")){
+        
     const value=input.value;
     if(value=='') alert('Nic nie napisaleś!')
     else{
@@ -15,7 +17,8 @@ buttonAdd.addEventListener('click',function(){
     const divLi=document.createElement('div');
     liItem.appendChild(divLi);
     divLi.addEventListener('click',function(e){
-        e.target.parentElement.remove();
+        if(confirm("Usunąć zadanie?"))e.target.parentElement.remove();
+        
     })
     list.addEventListener('click',function(e){
         if(e.target.className==='') {e.target.classList.add('checked')}
@@ -23,21 +26,11 @@ buttonAdd.addEventListener('click',function(){
         
     })
     }
+    }
+    else{
+        alert('Wycofałeś dodanie zadania do listy!');
+    }
     
-
-    //liItems=document.querySelectorAll('li');
-    
-    // list.forEach((listItem)=>{
-    //     listItem.addEventListener('click',function(){
-    //         console.log(listItem);
-    //         listItem.classList.toggle('checked');
-    //     })
-    // })
-    
-    // list.addEventListener('click',function(e){
-    //     console.log(e.target);
-    //     if(e.target.tagName==="li") e.target.classList.toggle('checked');
-    // })
     
 }
 )
@@ -46,8 +39,7 @@ buttonAdd.addEventListener('click',function(){
 
 buttonClear.addEventListener('click',function(){
     input.value='';
-    //let targett=e.target;
-    //console.log(targett);
+    
 })
 
 
